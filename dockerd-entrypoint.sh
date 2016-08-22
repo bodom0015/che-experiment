@@ -21,4 +21,4 @@ sleep 2s
 
 /bin/sed -i 's/machine.ws_agent.max_start_time_ms=60000/machine.ws_agent.max_start_time_ms=600000/' /eclipse-che-4.5.1/conf/che.properties
 
-/eclipse-che-4.5.1/bin/che.sh --skip:uid -p:8080
+/eclipse-che-4.5.1/bin/che.sh --skip:uid --remote:${CHE_HOST} --port:${CHE_PORT}
