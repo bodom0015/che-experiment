@@ -13,6 +13,6 @@ ENV JAVA_HOME /usr/lib/jvm/default-jvm/jre/
 COPY dockerd-entrypoint.sh /usr/local/bin/
  
 VOLUME /var/lib/docker
-EXPOSE 8080
+EXPOSE 8080 8000 49152-49162
  
 ENTRYPOINT ["dockerd-entrypoint.sh"]
