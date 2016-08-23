@@ -33,3 +33,15 @@ You should then be able to navigate your browser to `http://${CHE_HOST}:${CHE_PO
 ```bash
 curl -L ${CHE_HOST}:${CHE_PORT}
 ```
+
+# Create a Workspace
+Creates a workspace
+`http://localhost:8080/dashboard/#/create-workspace`
+
+# Create a Project
+Creates a workspace and a project
+`http://localhost:8080/dashboard/#/create-project`
+
+# Standalone Observations
+* Closely resembles the "Codenvy Beta" interface
+* No "factories"
