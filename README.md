@@ -21,27 +21,28 @@ docker build -t ndslabs/che:dind .
 ## Run
 Run your newly built image using the following command:
 ```bash
-CHE_HOST=localhost
-CHE_PORT=8080
-docker run --name=che -it --rm --net=host --privileged -e CHE_HOST=${CHE_HOST} -e CHE_PORT=${CHE_PORT} ndslabs/che:dind
+CHE_HOST=141.142.xxx.xxx
+docker run --name=che -it --rm -p 8080:8080 -p 8000:8000 -p 32768-65535:32768-65535 --privileged -e CHE_HOST=${CHE_HOST} ndslabs/che:dind
 ```
 
 NOTE: Make sure to substitute in the host / port you plan to use to access the UI.
 
 ## Access
-You should then be able to navigate your browser to `http://${CHE_HOST}:${CHE_PORT}` to start using Che:
+You should then be able to navigate your browser to `http://${CHE_HOST}:8080` to start using Che:
 ```bash
-curl -L ${CHE_HOST}:${CHE_PORT}
+curl -L ${CHE_HOST}:8080
 ```
 
 # Create a Workspace
 Creates a workspace
-`http://localhost:8080/dashboard/#/create-workspace`
+`http://${CHE_HOST}:8080/dashboard/#/create-workspace`
 
 # Create a Project
 Creates a workspace and a project
-`http://localhost:8080/dashboard/#/create-project`
+`http://${CHE_HOST}:8080/dashboard/#/create-project`
 
 # Standalone Observations
 * Closely resembles the "Codenvy Beta" interface
 * No "factories"
+* Does debug actually work?
+* Requires exposing Docker NodePorts (32768-65535)
