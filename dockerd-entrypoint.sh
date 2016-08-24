@@ -22,4 +22,4 @@ sleep 2s
 export timeout=180000
 sed -i 's/machine.ws_agent.max_start_time_ms=60000/machine.ws_agent.max_start_time_ms=${timeout}/' conf/che.properties
 
-bin/che.sh --skip:uid
+bin/che.sh --skip:uid --remote:${CHE_HOST}
